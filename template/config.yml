@@ -1,0 +1,19 @@
+columns:
+  to_drop:
+    #- keywords
+    #- entities
+    - code
+    - error
+    - warnings
+  binary_columns:
+    - sentiment
+    - Diff
+  datetime:
+    time: Date
+    sentiment: crawled
+  drop_na:
+    - sentiment
+    - usage
+    - crawled
+    - emotion
+  to_predict: sentiment
