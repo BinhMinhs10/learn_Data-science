@@ -1,0 +1,5 @@
+matplotlib==3.4.1
+numpy==1.20.2
+pandasgui==0.2.10.1
+pandas==1.2.3
+fbprophet==0.7.1
