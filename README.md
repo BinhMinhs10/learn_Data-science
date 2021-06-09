@@ -4,6 +4,7 @@
 python main.py
 ```
 ## 1. using prophet & install prophet
+2017, Facebook released Prophet 
 ```bash
 pip install fbprophet
 ```
@@ -16,3 +17,7 @@ In 2020, Facebook with researchers at Stanford and Monash University, released a
 Extension of Prophet, a forecasting library that was release in 2017 by FB
 
 
+## 3. Silverkite
+May 2021, LinkedIn released algorithms called [Silverkite](https://arxiv.org/pdf/2105.01098.pdf) and python library named `graykite`
+* work well in time series with time-varying trends, seasonality, repeated event/holidays, short-range effects
+* [greykite library](https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0100_choose_model.html)
