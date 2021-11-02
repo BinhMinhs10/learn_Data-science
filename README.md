@@ -21,3 +21,6 @@ Extension of Prophet, a forecasting library that was release in 2017 by FB
 May 2021, LinkedIn released algorithms called [Silverkite](https://arxiv.org/pdf/2105.01098.pdf) and python library named `graykite`
 * work well in time series with time-varying trends, seasonality, repeated event/holidays, short-range effects
 * [greykite library](https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0100_choose_model.html)
+
+## 4. Merlion: A Machine Learning Library for Time Series
+* [Merlion](https://github.com/salesforce/merlion)
