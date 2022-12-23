@@ -9,7 +9,7 @@ text = """
 """
 
 data = pd.read_csv('datasets/seattleWeather_1948-2017.csv')
-# print(data.head(10))
+print(data.shape)
 print(data.head(5))
 
 # loc function is used to access columns using column names
@@ -25,7 +25,7 @@ start = time.time()
 for index, row in data.iterrows():
     data.loc[index, 'c'] = row.TMAX - row.TMIN
 end = time.time()
-print("loc runtime: ", end - start)
+print("1. using loc (access multiple elements series/dataframe) runtime: ", end - start)
 
 # same manipulation by replacing ‘loc’ with ‘at’ (or replacing ‘iloc’ with ‘iat’)
 start = time.time()
@@ -33,6 +33,40 @@ start = time.time()
 for index, row in data.iterrows():
     data.at[index, 'c'] = row.TMAX - row.TMIN
 end = time.time()
-print("at runtime: ", end - start)
+print("2. using at (access a scaler) runtime: ", end - start)
 
-print(text)
+# print(text)
+
+
+# ============  Avoid using iterrows() because itertuples() can be 100 times faster ============
+start = time.time()
+# Iterating through DataFrame
+list_c = []
+for (col0, col1, col2, col3, col4, col5) in data.itertuples(index=None):
+    list_c.append(col2 - col3)
+data['c'] = list_c
+# print(data.head())
+end = time.time()
+print("1. itertuples(index=None) runtime: ", end - start)
+
+
+start = time.time()
+# Iterating through DataFrame
+list_c = []
+for row in data.itertuples(index=False):
+    list_c.append(row.TMAX - row.TMIN)
+data['c'] = list_c
+# print(data.head())
+end = time.time()
+print("2. itertuples(index=False) runtime: ", end - start)
+
+
+start = time.time()
+# Iterating through DataFrame
+list_c = []
+for row in data.itertuples(index=False):
+    list_c.append(row[data.columns.get_loc('TMAX')] - row[data.columns.get_loc('TMIN')])
+data['c'] = list_c
+# print(data.head())
+end = time.time()
+print("3. Polyvalent Itertuples() (working even with special characters in the column name) runtime: {} seconds".format(end - start))
