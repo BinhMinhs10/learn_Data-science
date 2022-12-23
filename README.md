@@ -1,8 +1,16 @@
-# Time-series 
+# Pandas
 ## Visualise & statistic df using `pandasgui`
 ```bash
 python main.py
 ```
+
+## How to iterate efficiently
+*  Avoid using `iterrows()`  => `itertuples()` can be 100 times faster.
+```bash
+python practical_loop_examples.py
+```
+
+# Time-series 
 ## 1. using prophet & install prophet
 2017, Facebook released Prophet 
 ```bash
