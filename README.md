@@ -32,3 +32,7 @@ May 2021, LinkedIn released algorithms called [Silverkite](https://arxiv.org/pdf
 
 ## 4. Merlion: A Machine Learning Library for Time Series
 * [Merlion](https://github.com/salesforce/merlion)
+
+## 5. TABPFN: A Transformer that solves small tabular classification problems in a second
+* [TabPFN](https://github.com/automl/TabPFN)
+
